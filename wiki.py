@@ -6,7 +6,7 @@ BASE = 'https://en.wikipedia.org/wiki/'
 START = 'https://en.wikipedia.org/wiki/Kevin_Bacon'
 END = 'https://en.wikipedia.org/wiki/Adolf_Hitler'
 MAX_DEPTH = 10
-LINKS = 6
+LINKS = 20
 
 def get_hrefs(url):
     html = urlopen(url)
@@ -37,7 +37,7 @@ path = []
 goal = END[30:]
 
 while queue:
-    path = queue.pop()
+    path = queue.pop(0)
     print(path)
     article = path[-1]
     if article == goal:
