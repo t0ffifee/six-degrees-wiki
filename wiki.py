@@ -4,13 +4,15 @@ import re
 
 BASE = 'https://en.wikipedia.org/wiki/'
 START = 'https://en.wikipedia.org/wiki/Kevin_Bacon'
-END = 'https://en.wikipedia.org/wiki/Adolf_Hitler'
+# END = 'https://en.wikipedia.org/wiki/Adolf_Hitler'
+END = 'https://en.wikipedia.org/wiki/Sleepers'
 MAX_DEPTH = 10
 LINKS = 20
 
 def get_hrefs(url):
     html = urlopen(url)
-    bs = BeautifulSoup(html, 'html.parser')
+    # bs = BeautifulSoup(html, 'html.parser')
+    bs = BeautifulSoup(html, 'lxml')
     article = bs.find(id='mw-content-text')
     links = article.find_all('a', href=True)
     hrefs = [link['href'] for link in links]
