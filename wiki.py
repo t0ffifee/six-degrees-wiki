@@ -4,7 +4,6 @@ import re
 
 BASE = 'https://en.wikipedia.org/wiki/'
 START = 'https://en.wikipedia.org/wiki/Kevin_Bacon'
-# END = 'https://en.wikipedia.org/wiki/Adolf_Hitler'
 END = 'https://en.wikipedia.org/wiki/Sleepers'
 MAX_DEPTH = 10
 LINKS = 20
